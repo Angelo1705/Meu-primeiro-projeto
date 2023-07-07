@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --tex-color: white;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --stroke-color:  rgb(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --hightligh-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(./assets/moon-stars.svg)
+}
+
+.light {
+    --tex-color: rgb(0, 0, 0);
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.05);
+    --hightligh-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./assets/sun.svg)
+}
+
+body {
+
+    background-image: var(--bg-url);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+
+/*Atalho*/
+
+    background: url(./assets/bg-mobile.jpg) no-repeat top center cover;
+}
+
+body * {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--tex-color);
+}
+
+#container {
+    border: 1px;
+    width: 100%;
+    max-width: 588px;
+    margin: auto;
+
+    padding: 0 24px;
+}
+
+#profile {
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+#switch {
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border: 0;
+    border-radius: 50%;
+    background-image: var(--switch-bg-url);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    transform: translateY(-12%);
+}
+
+.light #switch button{
+    right: 0;
+    left: initial;
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+
+#text {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.151);
+}
+
+#laura img {
+    width: 75px;
+    height: 50px;
+}
+
+#ang {
+    text-align: center;
+}
+
+#listas {
+    color: white;
+}
+
+#input {
+    color: rgb(0, 0, 0);
+    background-image: url(./assets/bg-mobile-light.jpg);
+    background-size: cover;
+}
+
+ul {
+    list-style: none;
+    gap: 8px;
+    flex-direction: column;
+    padding: 24px 0;
+}
+
+ul li a {
+    border: 1px solid var(--stroke-color);
+    display: flex;
+    justify-content: center;
+    height: 52px;
+    align-items: center;
+    background: var(--surface-color);
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    text-decoration: bolder;
+    font-weight: bold;
+    transition: background .5s ;
+}
+
+ul li:hover {
+    background-color: var(--surface-color-hover);
+    border: 1.5px solid var(--tex-color);
+}
+#sb {
+    text-align: center;
+}
+
+#social-links {
+    display: flex;
+    padding: 24px 0;
+    font-size: 24px;
+    justify-content: center;
+}
+
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    transition: background 0.2s;
+    border-radius: 50%;
+}
+
+#social-links a:hover {
+    background: var(--hightligh-color);
+}
