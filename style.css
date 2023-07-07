@@ -9,7 +9,7 @@
     --bg-url: url(./assets/bg-mobile.jpg);
     --stroke-color:  rgb(255, 255, 255, 0.5);
     --surface-color: rgba(255, 255, 255, 0.1);
-    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --surface-color-hover: rgba(151, 151, 151, 0.3);
     --hightligh-color: rgba(255, 255, 255, 0.2);
     --switch-bg-url: url(./assets/moon-stars.svg)
 }
@@ -19,7 +19,7 @@
     --bg-url: url(./assets/bg-mobile-light.jpg);
     --stroke-color: rgba(0, 0, 0, 0.5);
     --surface-color: rgba(0, 0, 0, 0.05);
-    --surface-color-hover: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.13);
     --hightligh-color: rgba(0, 0, 0, 0.1);
     --switch-bg-url: url(./assets/sun.svg)
 }
@@ -33,7 +33,7 @@ body {
 
 /*Atalho*/
 
-    background: url(./assets/bg-mobile.jpg) no-repeat top center cover;
+    background: var(--bg-url) no-repeat top center/cover;
 }
 
 body * {
@@ -80,11 +80,15 @@ body * {
     z-index: 1;
     left: 0;
     transform: translateY(-12%);
+    animation: slide-back 0.4s forwards;
+}
+
+#switch button:hover {
+    outline: 8px solid var(--hightligh-color);
 }
 
 .light #switch button{
-    right: 0;
-    left: initial;
+    animation: slide-in 0.4s forwards;
 }
 
 #switch span {
@@ -112,10 +116,6 @@ body * {
     text-align: center;
 }
 
-#listas {
-    color: white;
-}
-
 #input {
     color: rgb(0, 0, 0);
     background-image: url(./assets/bg-mobile-light.jpg);
@@ -136,17 +136,18 @@ ul li a {
     height: 52px;
     align-items: center;
     background: var(--surface-color);
-    border-radius: 8px;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     text-decoration: bolder;
     font-weight: bold;
     transition: background .5s ;
+    border-radius: 8px;
 }
 
 ul li:hover {
     background-color: var(--surface-color-hover);
     border: 1.5px solid var(--tex-color);
+    border-radius: 8px;
 }
 #sb {
     text-align: center;
@@ -170,4 +171,22 @@ ul li:hover {
 
 #social-links a:hover {
     background: var(--hightligh-color);
+}
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
+    }
 }
