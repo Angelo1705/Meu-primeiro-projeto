@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="757" height="400"></canvas>
+
+    <script>
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+    
+        pincel.fillStyle = 'lightgrey';
+        pincel.fillRect(0, 0, 1000, 1000);
+    
+        var desenha = false;
+    
+      // atribuindo diretamente a função anônima
+       tela.onmousemove = function(evento) {
+    
+            if(desenha) {
+                var x = evento.pageX - tela.offsetLeft;
+                var y = evento.pageY - tela.offsetTop;
+                pincel.fillStyle = 'black';
+                pincel.beginPath();
+                pincel.arc(x, y, 10, 0, 2 * 3.14);
+                pincel.fill();
+            }
+            console.log(x + ',' + y);
+        }
+    
+        tela.onmousedown = function() {
+    
+            desenha = true;
+        }
+    
+         tela.onmouseup = function() {
+    
+            desenha = false;
+        }
+    </script>
+
+
+</body>
+</html>
