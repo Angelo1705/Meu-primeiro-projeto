@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 :root {
@@ -39,6 +40,45 @@ body {
 body * {
     font-family: 'Montserrat', sans-serif;
     color: var(--tex-color);
+}
+
+section {
+    padding: 5% 25% 0 25%;
+    text-align: center;
+}
+
+
+
+.cabecalho {
+    backdrop-filter: blur(4px);
+    background: var(--surface-color);
+    display: flex;
+    padding: 1.5%;
+    font-size: 200%;
+    justify-content: center;
+}
+
+.itens_cabecalho {
+    justify-content: space-between;
+    display: flex;
+    width: 25%;
+}
+
+.apresentacao {
+    padding: 3% 30% 0 30%;
+    text-align: center;
+}
+
+.home:hover {
+    backdrop-filter: blur(4px);
+    background: var(--surface-color-hover);
+    border-radius: 10%;
+}
+
+.about:hover {
+    backdrop-filter: blur(4px);
+    background: var(--surface-color-hover);
+    border-radius: 10%;
 }
 
 #container {
@@ -114,12 +154,6 @@ body * {
 
 #ang {
     text-align: center;
-}
-
-#input {
-    color: rgb(0, 0, 0);
-    background-image: url(./assets/bg-mobile-light.jpg);
-    background-size: cover;
 }
 
 ul {
